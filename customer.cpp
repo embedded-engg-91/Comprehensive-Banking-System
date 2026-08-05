@@ -15,15 +15,15 @@ void Customer::displayCustomerInfo() const
 {
     cout<<"Customer ID: "<<customerID<<endl;
     cout<<"Account Holder Name:"<<name<<endl;
-    //here i need to caall the account to dispaly the account type nnumber and balance 
+    
     for (auto it = accounts.begin(); it != accounts.end(); it++)
 {
-    // *it is a shared_ptr<Account>
-    (*it)->displayAccount(); //the  object already exists inside the vecotr 
+    
+    (*it)->displayAccount(); 
 }
-//we use vetor na vector is dynamic array 
-//so vector 0= saving account goes to thas display fucntion automatiicaly--polymorphism
-//vector 1=FD account goes to that display fucntion automatically----polymorphism
+
+
+
 }
 vector<shared_ptr<Account>>& Customer::getAccounts()
 {
