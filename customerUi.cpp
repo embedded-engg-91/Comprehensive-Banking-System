@@ -4,13 +4,13 @@
 CustomerUI::CustomerUI(shared_ptr<Customer> cust)
     : customer(cust)
 {
-} //similar to the one we did in banker 
+} 
 void CustomerUI::displayMenu()
 {
-    //view acc detail
-    //deopsit
-    //withdraw
-    //transcation history 
+    
+    
+    
+    
     cout<<"Choose an option:"<<endl;
     cout<<"1. View Account Details"<<endl;
     cout<<"2. Deposit Money"<<endl;
@@ -30,15 +30,15 @@ void CustomerUI::handleOperations()
 
     switch(choice)
     {
-        case 1://view account detials
-        //cuustomer id, customer name, account number, account balance type,  
+        case 1:
+        
         customer->displayCustomerInfo();
         break;
 
 
         case 2:
         {
-            string accNo; //declaring local variables so we need the braces for this case 
+            string accNo; 
             double amount;
 
             cout << "Enter Account Number: ";
@@ -47,14 +47,14 @@ void CustomerUI::handleOperations()
             cout << "Enter Amount: ";
             cin >> amount;
 
-            // Search through the customer's accounts
+            
 
             int flag=0;
             for( auto it=accounts.begin();it!=accounts.end();it++)
             {
                 if ((*it)->getAccountNumber() == accNo)
                 {
-                    (*it)->deposit(amount); //deposited amount in that type of account aiutomatically due to runtime polymorphism
+                    (*it)->deposit(amount); 
                     flag=1;
                     break;
                 }
@@ -64,7 +64,7 @@ void CustomerUI::handleOperations()
             cout<<"This account number does not exist.Please try again"<<endl;
             return;
             }
-            // Save the updated data to file will  be done at once before exit 
+            
 
             cout<<"Amount has been deposited successfully"<<endl;
 
@@ -77,9 +77,9 @@ void CustomerUI::handleOperations()
         break;
 
 
-        case 3: //withdrawing money 
+        case 3: 
         {
-            string accNo; //declaring local variables so we need the braces for this case 
+            string accNo; 
             double amount;
 
             cout << "Enter Account Number: ";
@@ -88,14 +88,14 @@ void CustomerUI::handleOperations()
             cout << "Enter Amount: ";
             cin >> amount;
 
-            // Search through the customer's accounts
+            
             int flag=0;
             for( auto it=accounts.begin();it!=accounts.end();it++)
             {
                 if ((*it)->getAccountNumber() == accNo)
                 {
                     
-                    (*it)->withdraw(amount); //deposited amount in that type of account aiutomatically due to runtime polymorphism
+                    (*it)->withdraw(amount); 
                     flag=1;
                     break;
                     
@@ -105,7 +105,7 @@ void CustomerUI::handleOperations()
             {
             cout<<"This account number does not exist.Please try again"<<endl;
             return;
-            // Save the updated data to file will  be done at once before exit 
+            
             }
             cout<<"Amount has been withdrawn successfully"<<endl;
 
@@ -116,8 +116,8 @@ void CustomerUI::handleOperations()
 
 
 
-        case 4: //view transaction history
-        //iterate theough each vector in trancaction in account class and dispaly the transaction
+        case 4: 
+        
 
         for (auto it = accounts.begin(); it != accounts.end(); it++)
         {
