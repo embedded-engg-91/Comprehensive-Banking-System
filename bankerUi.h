@@ -14,9 +14,6 @@ class BankerUI : public UI
 public:
     BankerUI(shared_ptr<Banker> b, map<string, shared_ptr<Customer>> &custs);
 
-
-
-
     void displayMenu() override;
     void handleOperations() override;
 };
