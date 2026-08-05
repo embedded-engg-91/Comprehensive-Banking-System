@@ -5,7 +5,6 @@ Banker::Banker(string id, string nm, string pwd)
 {
 }
 
-
 void Banker::saveToFile(ofstream &out) const
 {
     out << bankerID << ","
