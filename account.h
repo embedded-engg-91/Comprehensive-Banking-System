@@ -13,7 +13,7 @@ protected:
     string accountNumber;
     double balance;
     string accountType;
-    vector<Transaction> transactions;//each accooun type will be having its own transactions
+    vector<Transaction> transactions;
 
 public:
     Account(string accNum, double bal, string accType);
