@@ -13,14 +13,14 @@
 
 using namespace std;
 
-//---------------------- LOAD FILES ----------------------//
+
 
 void loadFiles(map<string, shared_ptr<Banker>> &bankers,
                map<string, shared_ptr<Customer>> &customers)
 {
     string line;
 
-    // Load bankers
+    
     ifstream bankerFile("bankers.csv");
     while (getline(bankerFile, line))
     {
@@ -36,7 +36,7 @@ void loadFiles(map<string, shared_ptr<Banker>> &bankers,
     }
     bankerFile.close();
 
-    // Load customers
+    
     ifstream customerFile("customers.csv");
     while (getline(customerFile, line))
     {
@@ -52,7 +52,7 @@ void loadFiles(map<string, shared_ptr<Banker>> &bankers,
     }
     customerFile.close();
 
-    // Load accounts
+    
     ifstream accountFile("accounts.csv");
 
     while (getline(accountFile, line))
@@ -87,7 +87,7 @@ void loadFiles(map<string, shared_ptr<Banker>> &bankers,
     accountFile.close();
 }
 
-//---------------------- SAVE FILES ----------------------//
+
 
 void saveFiles(map<string, shared_ptr<Banker>> &bankers,
                map<string, shared_ptr<Customer>> &customers)
@@ -108,7 +108,7 @@ void saveFiles(map<string, shared_ptr<Banker>> &bankers,
         for (auto &acc : accounts)
         {
             accountFile
-                << c.first << ","                  // Customer ID
+                << c.first << ","                  
                 << acc->getAccountNumber() << ","
                 << acc->getBalance() << ","
                 << 3.5
@@ -121,7 +121,7 @@ void saveFiles(map<string, shared_ptr<Banker>> &bankers,
     accountFile.close();
 }
 
-//---------------------- MAIN ----------------------//
+
 
 int main()
 {
@@ -212,7 +212,7 @@ int main()
                 CustomerUI ui(customer);
                 ui.handleOperations();
                 saveFiles(bankers, customers);
-                //cout << "\nAll Data Saved Successfully.\n";
+                
                 break;
             }
 
