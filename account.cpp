@@ -3,7 +3,7 @@
 Account::Account(string accNum, double bal, string accType)
     : accountNumber(accNum), balance(bal), accountType(accType)
 {
-} //simialr to the banker 
+} 
 
 
 void Account::addTransaction(const string &type,
@@ -16,7 +16,7 @@ void Account::addTransaction(const string &type,
 
 string Account:: getAccountNumber() const
 {
-    return accountNumber; //function means we are already inside the object na
+    return accountNumber; 
 }
 double Account::getBalance() const
 {
@@ -29,7 +29,7 @@ string Account::getAccountType() const
 
 void Account::displayTransactionHistory() const
 {
-for (auto it = transactions.begin(); it != transactions .end(); it++) //mistake it should iterate over transaction vextor not account vectos 
+for (auto it = transactions.begin(); it != transactions .end(); it++) 
         {
             (*it).displayTransaction();
         }
