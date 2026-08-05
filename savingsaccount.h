@@ -5,7 +5,7 @@
 #include "account.h"
 using namespace std;
 
-class SavingsAccount : public Account { //account is abstract class whise base definition we are using 
+class SavingsAccount : public Account { 
     double interestRate;
 
 public:
